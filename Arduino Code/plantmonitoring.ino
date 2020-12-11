@@ -34,6 +34,8 @@ void loop()
     doc["soilMoisture"] = soilMoisture;
     // Print Json
     serializeJson(doc, Serial);
+    Serial.println();
+
     // Delay
-    delay(5000);
+    delay(3000);
 }
