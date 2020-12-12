@@ -9,7 +9,7 @@ import json
 
 # GLOBALS
 
-host = '0.0.0.0'  # == localhost
+host = '192.168.100.11'  # == localhost
 webPort = 8080
 username = "Setia"
 app = Flask(__name__)
@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template('index.html', username=username)
+    return render_template('index.html', username=username, host=host)
 
 
 @app.route("/update", methods=['GET'])

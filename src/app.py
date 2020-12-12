@@ -26,7 +26,7 @@ soilMoisture = []
 
 @app.route("/")
 def index():
-    return render_template('index.html', username=username)
+    return render_template('index.html', username=username, host=host)
 
 
 @app.route("/update", methods=['GET'])

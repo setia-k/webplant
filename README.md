@@ -5,6 +5,7 @@
 - Python 3 with pip and venv installed
 - Arduino Library
   - ArduinoJson
+
 ## Installation
 
 1. Download
@@ -39,10 +40,13 @@ Either run `app.py` or `flask run`.
 ## Projects Structures
 
 - {venv library}/
+- Arduino Code/ --> Code used by arduino
+- schematics/ --> Image of the project sketches
 - src/
   - /templates/ --> HTML file location
-  - /static/ --> css file location
+  - /static/ --> css & js file location
   - /app.py --> The main python file
+  - /app_arduiless.py --> main python file used to run without arduino
 
 ## Project Refrences and Tutorials
 
