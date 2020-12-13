@@ -150,10 +150,10 @@
     <script>
         // Moisture Level to text
         function soilMoistureToText(soilMoisture) {
-            if (soilMoisture < 350) {
+            if (soilMoisture < 300) {
                 return "Wet";
             }
-            else if (soilMoisture >= 350 && soilMoisture < 450) {
+            else if (soilMoisture >= 300 && soilMoisture < 450) {
                 return "Might Need Water";
             }
             else if (soilMoisture >= 450) {
@@ -192,7 +192,7 @@
         var url = 'http://{{host}}:8080/update';
         var hour = new Date().getHours();
         document.getElementById('salutations').innerHTML = `<h3 class="text-dark mb-0">${hourToText(hour)}, {{username}}</h3>`
-        //
+        // Get Data from /update
         try {
             fetch(url)
                 .then(res => res.json())
