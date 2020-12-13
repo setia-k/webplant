@@ -8,11 +8,12 @@ import json
 import queue
 import serial
 import threading
+import platform
 import time
 # GLOBALS
 arduinoPortLinux = '/dev/ttyACM0'
 arduinoPortWindows = 'COM3'
-host = '192.168.100.11'  # == localhost
+host = '192.168.100.11'
 webPort = 8080
 username = "Setia"
 app = Flask(__name__)
@@ -46,14 +47,6 @@ def updateData():
     return jsonify(result)
 
 
-def dataCollector():
-    data = getDataParsed()
-    # put data in queue
-    q.put(float(data["humidity"]))
-    q.put(float(data["temperature"]))
-    q.put(int(data["soilMoisture"]))
-
-
 def getDataParsed():
     """
     Return parsed json of data from sensors in dictionary form
@@ -64,12 +57,24 @@ def getDataParsed():
     return parsedJson
 
 
+def dataCollector():
+    data = getDataParsed()
+    # put data in queue
+    q.put(float(data["humidity"]))
+    q.put(float(data["temperature"]))
+    q.put(int(data["soilMoisture"]))
+
+
 # Main
 if __name__ == '__main__':
-    serialConsole = serial.Serial(arduinoPortWindows, 9600, timeout=5)
-    x = threading.Thread(target=dataCollector)
-    x.start()
-    print("Preparing to run please wait!")
+    if platform.system() == 'Linux':
+        usedArduinoPort = arduinoPortLinux
+    elif platform.system() == 'Windows':
+        usedArduinoPort = arduinoPortWindows
+    serialConsole = serial.Serial(usedArduinoPort, 9600, timeout=5)
+    collector = threading.Thread(target=dataCollector)
+    collector.start()
+    print("Preparing to run on " + platform.system() + " please wait!")
     time.sleep(3)
     print("App started!")
     app.run(host, webPort)

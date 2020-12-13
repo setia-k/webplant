@@ -20,7 +20,7 @@ int threshold_lwr = 300;
 int threshold_upr = 450;
 // Declare DHT pin and type
 DHT dht(dhtPin, DHTTYPE);
-//
+// LED Indicator
 int ledLevel(int soilMoistureValue)
 {
     if (soilMoistureValue < threshold_lwr)
@@ -56,7 +56,7 @@ void loop()
     doc["humidity"] = humidity;
     doc["temperature"] = temperature;
     doc["soilMoisture"] = soilMoisture;
-    // Print Json
+    // Send JSON data to RPI using serial communication
     serializeJson(doc, Serial);
     Serial.println();
     //

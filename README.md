@@ -53,5 +53,7 @@ After all requirements are installed, run app byr running `app.py` located insid
 
 - <https://create.arduino.cc/projecthub/mafzal/temperature-monitoring-with-dht22-arduino-15b013>
 - <https://create.arduino.cc/projecthub/murthysiddhant/plant-monitor-sensor-to-front-end-c1f715>
+- <https://docs.python.org/3/tutorial/venv.html>
+- <https://maker.pro/arduino/projects/arduino-soil-moisture-sensor>
 - <https://www.youtube.com/playlist?list=PLC86yC9XtBxqpbY-3SYs9IahAC9bBE4PY>
 - <https://www.youtube.com/watch?time_continue=393&v=tXpFERibRaU&feature=emb_title>
