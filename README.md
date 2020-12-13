@@ -5,6 +5,7 @@
 - Python 3 with pip and venv installed
 - Arduino Library
   - ArduinoJson
+  - DHT sensor library by Adafruit
 
 ## Installation
 
@@ -28,14 +29,14 @@ See <https://docs.python.org/3/tutorial/venv.html> further refrences.
   1. `cd {project folder}/venvlib//bin/`
   2. `source activate`
 
-- Deactivating
+- Deactivating venv
 
   1. Type `deactivate` in shell
 
 ## Running the project
 
-Either run `app.py` or `flask run`.  
-`app.py` will run on defined `localhost:port` while `flask run` will run on `127.0.0.1:5000`
+After all requirements are installed, run app byr running `app.py` located inside src folder.
+`app.py` will run on defined `localhost:port`
 
 ## Projects Structures
 

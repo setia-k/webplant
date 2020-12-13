@@ -12,7 +12,7 @@ import time
 # GLOBALS
 arduinoPortLinux = '/dev/ttyACM0'
 arduinoPortWindows = 'COM3'
-host = '0.0.0.0'  # == localhost
+host = '192.168.100.11'  # == localhost
 webPort = 8080
 username = "Setia"
 app = Flask(__name__)
