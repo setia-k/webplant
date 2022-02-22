@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>WebPlant</title>
+    <!-- Link Rel -->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/fontawesome-all.min.css')}}">
+</head>
+
+<body id="page-top" style="background: #f8f9fc;">
+    <div id="wrapper" style="margin-top: 5%;">
+        <div class="d-flex flex-column" id="content-wrapper" style="background: #f8f9fc;">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4" id="salutations">
+                        <h3 class="text-dark mb-0">..., ...</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-info py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span
+                                                    style="border-color: #1a98d2;">Temp</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"
+                                                        id="temperature">
+                                                        <span>...<strong>°C</strong></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-temperature-low fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-info py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span
+                                                    style="border-color: #1a98d2;">Moisture</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"
+                                                        id="soilMoisture">
+                                                        <span>...</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-water fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-3 mb-4">
+                            <div class="card shadow border-left-info py-2" style="border-color: #dedede;">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span
+                                                    style="border-color: #1a98d2;">Humidity</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3" id="humidity">
+                                                        <span>...</span></div>
+                                                </div>
+                                                <div class="col" id="humidityBar">
+                                                    <div class="progress progress-sm" style="border-color: #1a98d2;">
+                                                        <div class="progress-bar bg-info" aria-valuenow="50"
+                                                            aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                            <span class="sr-only">50%</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-water fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="text-primary font-weight-bold m-0" style="border-color: #1a98d2;">Have
+                                        you watered your plant today?</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Morning</strong></h6><span
+                                                    class="text-xs">08:00 AM</span>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input
+                                                        class="custom-control-input" type="checkbox"
+                                                        id="formCheck-1"><label class="custom-control-label"
+                                                        for="formCheck-1"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Noon</strong></h6><span class="text-xs">12:30
+                                                    PM</span>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input
+                                                        class="custom-control-input" type="checkbox"
+                                                        id="formCheck-2"><label class="custom-control-label"
+                                                        for="formCheck-2"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Afternoon</strong></h6><span
+                                                    class="text-xs">04:30 PM</span>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input
+                                                        class="custom-control-input" type="checkbox"
+                                                        id="formCheck-3"><label class="custom-control-label"
+                                                        for="formCheck-3"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Moisture Level to text
+        function soilMoistureToText(soilMoisture) {
+            if (soilMoisture < 300) {
+                return "Wet";
+            }
+            else if (soilMoisture >= 300 && soilMoisture < 450) {
+                return "Might Need Water";
+            }
+            else if (soilMoisture >= 450) {
+                return "Dry";
+            }
+            else {
+                return "...";
+            }
+        }
+        // Get Hour to Text
+        function hourToText(hour) {
+            if (hour >= 5 && hour < 10) {
+                return "Good Morning";
+            }
+            else if (hour >= 10 && hour < 14) {
+                return "Good Day";
+            }
+            else if (hour >= 14 && hour < 18) {
+                return "Good Afternoon";
+            }
+            else if (hour >= 18 || hour < 5) {
+                return "Good Night";
+            }
+            else {
+                return "Hello"
+            }
+        }
+        // Insert Data from JSON
+        function writeJsonData(out) {
+            document.getElementById('humidity').innerHTML = `<span>${out[0]}</span>`
+            document.getElementById('humidityBar').innerHTML = `<div class="progress progress-sm" style="border-color: #1a98d2;"><div class="progress-bar bg-info" aria-valuenow="${out[0]}" aria-valuemin="0" aria-valuemax="100" style="width: ${out[0]}%;"><span class="sr-only">${out[0]}</span></div></div>`
+            document.getElementById('temperature').innerHTML = `<span>${out[1]}<strong>°C</strong></span>`
+            document.getElementById('soilMoisture').innerHTML = `<span>${soilMoistureToText(out[2])}</span>`
+        }
+        //
+        var url = 'http://{{host}}:8080/update';
+        var hour = new Date().getHours();
+        document.getElementById('salutations').innerHTML = `<h3 class="text-dark mb-0">${hourToText(hour)}, {{username}}</h3>`
+        // Get Data from /update
+        try {
+            fetch(url)
+                .then(res => res.json())
+                .then((out) => {
+                    writeJsonData(out);
+                });
+        } catch (error) {
+            console.log(error);
+            // USING XML HTTP REQUEST
+            try {
+                var jsonReq = new XMLHttpRequest();
+                jsonReq.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var data = JSON.parse(this.responseText);
+                        writeJsonData(data);
+                    }
+                }
+                jsonReq.open("GET", url, true);
+                jsonReq.send();
+            } catch (error) {
+                console.log(error);
+                console.log("DATA CAN'T BE FETCHED");
+            }
+        }
+        //
+    </script>
+</body>
+
+</html>
